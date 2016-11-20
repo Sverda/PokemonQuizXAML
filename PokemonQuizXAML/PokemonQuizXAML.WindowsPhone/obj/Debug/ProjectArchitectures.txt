@@ -1,0 +1,1 @@
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.WindowsPhone\PokemonQuizXAML.WindowsPhone.csproj;neutral
