@@ -21,9 +21,7 @@ namespace PokemonQuizXAML
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
         private global::Windows.UI.Xaml.Controls.AppBar appBar; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private global::Windows.UI.Xaml.Controls.Button addPokemon; 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private global::Windows.UI.Xaml.Controls.Button deletePokemon; 
+        private global::Windows.UI.Xaml.Controls.Button settings; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
         private global::Windows.UI.Xaml.Controls.Button next; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
@@ -64,8 +62,7 @@ namespace PokemonQuizXAML
             pageRoot = (global::Windows.UI.Xaml.Controls.Page)this.FindName("pageRoot");
             quiz = (global::PokemonQuizXAML.Quiz)this.FindName("quiz");
             appBar = (global::Windows.UI.Xaml.Controls.AppBar)this.FindName("appBar");
-            addPokemon = (global::Windows.UI.Xaml.Controls.Button)this.FindName("addPokemon");
-            deletePokemon = (global::Windows.UI.Xaml.Controls.Button)this.FindName("deletePokemon");
+            settings = (global::Windows.UI.Xaml.Controls.Button)this.FindName("settings");
             next = (global::Windows.UI.Xaml.Controls.Button)this.FindName("next");
             start = (global::Windows.UI.Xaml.Controls.Button)this.FindName("start");
             button1 = (global::Windows.UI.Xaml.Controls.Button)this.FindName("button1");

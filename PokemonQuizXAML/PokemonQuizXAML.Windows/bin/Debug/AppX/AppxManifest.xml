@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="0b580dd1-4781-46c6-a19a-fae9de4d3d1b" Publisher="CN=Damian" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="0b580dd1-4781-46c6-a19a-fae9de4d3d1b" Publisher="CN=Damian" Version="0.0.1.1" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>PokemonQuizXAML.Windows</DisplayName>
     <PublisherDisplayName>Damian</PublisherDisplayName>

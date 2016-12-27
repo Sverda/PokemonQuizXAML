@@ -13,7 +13,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI.Xaml.Media.Imaging;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -22,7 +21,7 @@ namespace PokemonQuizXAML
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class SettingsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -46,16 +45,13 @@ namespace PokemonQuizXAML
         }
 
 
-        public MainPage()
+        public SettingsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            quiz.CheckAnswerEvent += Quiz_CheckAnswerEvent;
-            quiz.GameOverEvent += Quiz_GameOverEvent;
         }
-
 
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
@@ -107,87 +103,12 @@ namespace PokemonQuizXAML
 
         #endregion
 
-        
-        private void addPokemon_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddPokemonPage));
-        }
-
-        private void deletePokemon_Click(object sender, RoutedEventArgs e)
+        private void browseShowPokemonFolderPath_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            quiz.OnCheckAnswerEvent(new CheckAnswerArgs(button1.Content.ToString()));
-        }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            quiz.OnCheckAnswerEvent(new CheckAnswerArgs(button2.Content.ToString()));
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            quiz.OnCheckAnswerEvent(new CheckAnswerArgs(button3.Content.ToString()));
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            quiz.OnCheckAnswerEvent(new CheckAnswerArgs(button4.Content.ToString()));
-        }
-
-        private void start_Click(object sender, RoutedEventArgs e)
-        {
-            start.IsEnabled = false;
-            setButtons();
-            next.IsEnabled = false;
-            quiz.SetOneRound();
-        }
-
-        private void next_Click(object sender, RoutedEventArgs e)
-        {
-            quiz.SetOneRound();
-            setButtons();
-        }
-
-
-        private void Quiz_CheckAnswerEvent(CheckAnswerArgs e)
-        {
-            setButtons();
-        }
-        private void setButtons()
-        {
-            if (button1.IsEnabled == true)
-            {
-                button1.IsEnabled = false;
-                button2.IsEnabled = false;
-                button3.IsEnabled = false;
-                button4.IsEnabled = false;
-                next.IsEnabled = true;
-            }
-            else
-            {
-                button1.IsEnabled = true;
-                button2.IsEnabled = true;
-                button3.IsEnabled = true;
-                button4.IsEnabled = true;
-                next.IsEnabled = false;
-            }
-        }
-
-        private void Quiz_GameOverEvent(GameOverArgs e)
-        {
-            button1.IsEnabled = false;
-            button2.IsEnabled = false;
-            button3.IsEnabled = false;
-            button4.IsEnabled = false;
-            next.IsEnabled = false;
-            start.IsEnabled = true;
-        }
-
-        private void settings_Click(object sender, RoutedEventArgs e)
+        private void browseHiddenPokemonFolderPath_Click(object sender, RoutedEventArgs e)
         {
 
         }

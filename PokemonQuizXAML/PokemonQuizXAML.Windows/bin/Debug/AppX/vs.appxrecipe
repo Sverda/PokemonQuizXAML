@@ -16,74 +16,74 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>E74852DF87A7D27272EE44C2C2F8695C32B787BF7BFBA3DC73656F2140DB1065</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>0b580dd1-4781-46c6-a19a-fae9de4d3d1b_1.0.0.0_neutral__zkjhe9sn2b5qc</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>3B3CB0FB9B86BD2A0A8BE3C6AB5A41389623947E9B2E50AFB090A004A1A4C868</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>0b580dd1-4781-46c6-a19a-fae9de4d3d1b_0.0.1.1_neutral__zkjhe9sn2b5qc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>0b580dd1-4781-46c6-a19a-fae9de4d3d1b_zkjhe9sn2b5qc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>0b580dd1-4781-46c6-a19a-fae9de4d3d1b</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=Damian</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>0.0.1.1</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-10-28T19:01:45.162</Modified>
+      <Modified>2016-12-27T17:15:17.527</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\PokemonQuizXAML.Windows.exe">
       <PackagePath>PokemonQuizXAML.Windows.exe</PackagePath>
-      <Modified>2016-10-28T19:31:27.739</Modified>
+      <Modified>2016-12-10T22:35:23.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\Assets\pokemonLogo.jpg">
       <PackagePath>Assets\pokemonLogo.jpg</PackagePath>
-      <Modified>2016-09-11T21:06:31.137</Modified>
+      <Modified>2016-12-10T22:29:15.966</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T20:01:10.000</Modified>
+      <Modified>2016-12-10T22:29:15.958</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T20:01:10.000</Modified>
+      <Modified>2016-12-10T22:29:15.959</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T20:01:10.000</Modified>
+      <Modified>2016-12-10T22:29:15.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-06T20:01:10.000</Modified>
+      <Modified>2016-12-10T22:29:15.962</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\PokemonQuizXAML.Windows.xr.xml">
       <PackagePath>PokemonQuizXAML.Windows.xr.xml</PackagePath>
-      <Modified>2016-10-28T19:20:22.581</Modified>
+      <Modified>2016-12-10T22:29:16.357</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2016-09-24T10:02:09.564</Modified>
+      <Modified>2016-12-10T22:35:23.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\AddPokemonPage.xbf">
       <PackagePath>AddPokemonPage.xbf</PackagePath>
-      <Modified>2016-09-24T10:02:09.568</Modified>
+      <Modified>2016-12-10T22:35:23.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\LoadingPage\LoadingPage.xbf">
       <PackagePath>LoadingPage\LoadingPage.xbf</PackagePath>
-      <Modified>2016-09-24T10:02:09.568</Modified>
+      <Modified>2016-12-10T22:35:23.841</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2016-10-28T19:31:27.630</Modified>
+      <Modified>2016-12-10T22:35:23.844</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-10-28T19:01:44.720</Modified>
+      <Modified>2016-12-27T17:15:17.164</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
