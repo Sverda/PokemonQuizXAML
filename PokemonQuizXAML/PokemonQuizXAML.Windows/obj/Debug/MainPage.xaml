@@ -18,16 +18,10 @@
     <Page.BottomAppBar>
         <AppBar x:Name="appBar">
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <Button x:ConnectionId='1' x:Name="addPokemon"                         >
+                <Button x:ConnectionId='1' x:Name="settings"                        Width="200">
                     <StackPanel Orientation="Vertical">
-                        <SymbolIcon Symbol="Add"/>
-                        <TextBlock Text="Add pokemon"/>
-                    </StackPanel>
-                </Button>
-                <Button x:ConnectionId='2' x:Name="deletePokemon" HorizontalAlignment="Center"                            >
-                    <StackPanel Orientation="Vertical">
-                        <SymbolIcon Symbol="Delete"/>
-                        <TextBlock Text="Delete Pokemon"/>
+                        <SymbolIcon Symbol="Setting"/>
+                        <TextBlock Text="Settings"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -81,15 +75,18 @@
                 <Image x:Name="displayPokemonImage" Source="{Binding Image}" HorizontalAlignment="Center" Width="500" Height="500"/>
             </Grid>
             <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button x:ConnectionId='8' x:Name="settingsMenu" Content="Settings"                           />
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:ConnectionId='5' x:Name="button1" Content="{Binding Button1}"                       IsEnabled="False"/>
-                    <Button x:ConnectionId='6' x:Name="button2" Content="{Binding Button2}"                       IsEnabled="False"/>
-                    <Button x:ConnectionId='7' x:Name="button3" Content="{Binding Button3}"                       IsEnabled="False"/>
-                    <Button x:ConnectionId='8' x:Name="button4" Content="{Binding Button4}"                       IsEnabled="False"/>
+                    <Button x:ConnectionId='4' x:Name="button1" Content="{Binding Button1}"                       IsEnabled="False"/>
+                    <Button x:ConnectionId='5' x:Name="button2" Content="{Binding Button2}"                       IsEnabled="False"/>
+                    <Button x:ConnectionId='6' x:Name="button3" Content="{Binding Button3}"                       IsEnabled="False"/>
+                    <Button x:ConnectionId='7' x:Name="button4" Content="{Binding Button4}"                       IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:ConnectionId='3' x:Name="next" Content="Next"                    Margin="0,0,40,0" IsEnabled="False"/>
-                    <Button x:ConnectionId='4' x:Name="start" Content="Start!"                    />
+                    <Button x:ConnectionId='2' x:Name="next" Content="Next"                    Margin="0,0,40,0" IsEnabled="False"/>
+                    <Button x:ConnectionId='3' x:Name="start" Content="Start!"                    />
                 </StackPanel>
             </Grid>
         </Grid>

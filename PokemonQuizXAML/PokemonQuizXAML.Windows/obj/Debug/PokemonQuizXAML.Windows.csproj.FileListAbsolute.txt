@@ -40,3 +40,8 @@ C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQui
 C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\LoadingPage\LoadingPage.g.cs
 C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\LoadingPage\LoadingPage.xaml
 C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\LoadingPage\LoadingPage.xbf
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\SettingsPage\SettingsPage.xbf
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\SettingsPage\SettingsPage.g.i.cs
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\SettingsPage\SettingsPage.g.cs
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\SettingsPage\SettingsPage.xaml
+C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\obj\Debug\SettingsPage\SettingsPage.xbf

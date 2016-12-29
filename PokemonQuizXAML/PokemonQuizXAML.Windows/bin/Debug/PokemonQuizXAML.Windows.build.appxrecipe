@@ -59,6 +59,9 @@
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\SettingsPage\SettingsPage.xbf">
+      <PackagePath>SettingsPage\SettingsPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Damian\Documents\Visual Studio 2015\Projects\PokemonQuizXAML\PokemonQuizXAML\PokemonQuizXAML.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

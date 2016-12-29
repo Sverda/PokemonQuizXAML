@@ -21,7 +21,14 @@ namespace PokemonQuizXAML
         {
             this.random = random;
             PokemonsData = new List<Pokemon>();
-            loadPokemonsAsync();
+            try
+            {
+                loadPokemonsAsync();
+            }
+            catch (Exception)
+            {
+                OnFolderNoFoundEvent();
+            }
             getDittoFromList();
         }
 
@@ -50,7 +57,7 @@ namespace PokemonQuizXAML
             }
         }
 
-
+        // TODO: Load folders from file and depends to this load pokemon
         private async void loadPokemonsAsync()
         {
             IStorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -80,6 +87,16 @@ namespace PokemonQuizXAML
         public Pokemon RandomPokemon()
         {
             return PokemonsData[random.Next(PokemonsData.Count)];
+        }
+
+        public event EventHandler FolderNoFoundEvent;
+        private void OnFolderNoFoundEvent()
+        {
+            EventHandler folderNoFoundEvent = FolderNoFoundEvent;
+            if (folderNoFoundEvent != null)
+            {
+                folderNoFoundEvent(this, new EventArgs());
+            }
         }
     }
 }

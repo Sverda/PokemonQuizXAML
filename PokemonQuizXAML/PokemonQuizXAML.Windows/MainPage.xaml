@@ -75,6 +75,9 @@
                 <Image x:Name="displayPokemonImage" Source="{Binding Image}" HorizontalAlignment="Center" Width="500" Height="500"/>
             </Grid>
             <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button x:Name="settingsMenu" Content="Settings" Click="settingsMenu_Click"/>
+                </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="button1" Content="{Binding Button1}" Click="button1_Click" IsEnabled="False"/>
                     <Button x:Name="button2" Content="{Binding Button2}" Click="button2_Click" IsEnabled="False"/>

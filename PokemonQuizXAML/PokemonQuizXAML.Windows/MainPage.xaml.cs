@@ -54,6 +54,8 @@ namespace PokemonQuizXAML
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             quiz.CheckAnswerEvent += Quiz_CheckAnswerEvent;
             quiz.GameOverEvent += Quiz_GameOverEvent;
+            quiz.PokemonHolder.FolderNoFoundEvent += PokemonHolder_FolderNoFoundEvent;
+            //this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled; //holds state of application if page has been changed
         }
 
 
@@ -107,7 +109,11 @@ namespace PokemonQuizXAML
 
         #endregion
 
-        
+        private void PokemonHolder_FolderNoFoundEvent(object sender, EventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage.SettingsPage));
+        }
+
         private void addPokemon_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddPokemonPage));
@@ -190,6 +196,11 @@ namespace PokemonQuizXAML
         private void settings_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void settingsMenu_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(SettingsPage.SettingsPage));
         }
     }
 }

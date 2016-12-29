@@ -1,10 +1,10 @@
 ﻿<Page
     x:Name="pageRoot"
-    x:Class="PokemonQuizXAML.SettingsPage"
+    x:Class="PokemonQuizXAML.SettingsPage.SettingsPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:PokemonQuizXAML"
+    xmlns:local="using:PokemonQuizXAML.SettingsPage"
     xmlns:common="using:PokemonQuizXAML.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,6 +13,7 @@
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">Settings</x:String>
+        <local:Settings x:Name="settings"/>
     </Page.Resources>
 
     <!--
@@ -46,17 +47,22 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        <Grid Grid.Row="1" Margin="120,0">
+        <Grid Grid.Row="1" Margin="120,0" DataContext="{StaticResource ResourceKey=settings}">
             <StackPanel Orientation="Vertical">
-                <StackPanel Margin="0,0,0,20">
+                <StackPanel Margin="0,20,0,20">
                     <TextBlock Text="Path to pokemon folder: " Style="{StaticResource CaptionTextBlockStyle}" FontSize="20"/>
-                    <TextBox x:Name="showPokemonFolderPath" Margin="0,10"/>
+                    <TextBox x:Name="showPokemonFolderPath" Margin="0,10" Text="{Binding ShownPath}"/>
                     <Button x:Name="browseShowPokemonFolderPath" Content="Browse" Click="browseShowPokemonFolderPath_Click"/>
                 </StackPanel>
                 <StackPanel>
                     <TextBlock Text="Path to hidden pokemon folder: " Style="{StaticResource CaptionTextBlockStyle}" FontSize="20"/>
-                    <TextBox x:Name="hiddenPokemonFolderPath" Margin="0,10"/>
+                    <TextBox x:Name="hiddenPokemonFolderPath" Margin="0,10" Text="{Binding HiddenPath}"/>
                     <Button x:Name="browseHiddenPokemonFolderPath" Content="Browse" Click="browseHiddenPokemonFolderPath_Click"/>
+                </StackPanel>
+                <StackPanel Margin="0,20">
+                    <TextBlock Text="Default application path:" Style="{StaticResource CaptionTextBlockStyle}" FontSize="20"/>
+                    <TextBox x:Name="defaultPath" Margin="0,10" Text="{Binding DefaultPath}"/>
+                    <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Center" Width="150" Height="75" Click="saveButton_Click"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

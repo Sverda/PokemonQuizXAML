@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
-namespace PokemonQuizXAML
+namespace PokemonQuizXAML.SettingsPage
 {
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
@@ -103,14 +103,19 @@ namespace PokemonQuizXAML
 
         #endregion
 
-        private void browseShowPokemonFolderPath_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void browseHiddenPokemonFolderPath_Click(object sender, RoutedEventArgs e)
         {
+            settings.BrowseFolderWithHiddenPokemon();
+        }
 
+        private void browseShowPokemonFolderPath_Click(object sender, RoutedEventArgs e)
+        {
+            settings.BrowseFolderWithShownPokemon();
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            settings.SaveSettings();
         }
     }
 }

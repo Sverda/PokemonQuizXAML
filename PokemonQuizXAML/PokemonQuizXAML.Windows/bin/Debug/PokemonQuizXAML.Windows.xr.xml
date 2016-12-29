@@ -15,6 +15,9 @@
     <RootPropertyPathName Name="WrongLabel" />
     <RootPropertyPathName Name="LevelLabel" />
     <RootPropertyPathName Name="CorrectLabel" />
+    <RootPropertyPathName Name="DefaultPath" />
+    <RootPropertyPathName Name="HiddenPath" />
+    <RootPropertyPathName Name="ShownPath" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -64,11 +67,13 @@
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontSize" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -77,7 +82,9 @@
       <RootProperty Name="Style" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
       <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Height" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension">
@@ -116,5 +123,7 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="PokemonQuizXAML.MainPage" />
+    <RootType FullName="PokemonQuizXAML.SettingsPage.Settings" />
+    <RootType FullName="PokemonQuizXAML.SettingsPage.SettingsPage" />
   </Roots.RootTypes>
 </Roots>

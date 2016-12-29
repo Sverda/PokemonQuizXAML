@@ -42,7 +42,7 @@ namespace PokemonQuizXAML
         private PokemonHolder pokemonHolder;
         public PokemonHolder PokemonHolder
         {
-            private get
+            get
             {
                 return pokemonHolder;
             }
