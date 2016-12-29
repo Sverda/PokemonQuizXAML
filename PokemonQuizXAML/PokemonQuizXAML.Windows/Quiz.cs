@@ -46,11 +46,16 @@ namespace PokemonQuizXAML
             {
                 return pokemonHolder;
             }
-            set
-            {
-                if (pokemonHolder == null)
-                    pokemonHolder = value;
-            }
+            //set
+            //{
+            //    if (pokemonHolder == null)
+            //        pokemonHolder = value;
+            //}
+        }
+
+        public void LoadPokemon()
+        {
+            pokemonHolder.LoadPokemonsAsync();
         }
 
         public Pokemon CurrentPokemon { get; private set; }
@@ -161,6 +166,12 @@ namespace PokemonQuizXAML
             demandWins = 3;
             demandLoses = 3;
             displayPokemon = false;
+        }
+
+        
+        public void AddHandlerToFileNotFoundEvent(EventHandler handler)
+        {
+            pokemonHolder.FileNotFoundEvent += handler;
         }
 
         public event GameOverHandler GameOverEvent;

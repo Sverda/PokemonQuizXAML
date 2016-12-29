@@ -9,6 +9,7 @@ using System.Runtime.Serialization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
+using System.IO;
 
 namespace PokemonQuizXAML
 {
@@ -21,8 +22,7 @@ namespace PokemonQuizXAML
         {
             this.random = random;
             PokemonsData = new List<Pokemon>();
-            loadPokemonsAsync();
-            getDittoFromList();
+            //LoadPokemonsAsync();
         }
 
 
@@ -50,12 +50,30 @@ namespace PokemonQuizXAML
             }
         }
 
-        // TODO: Load folders from file and depends to this load pokemon
-        private async void loadPokemonsAsync()
+        public async void LoadPokemonsAsync()
         {
+            //get folders' name from settings.txt file
             IStorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            StorageFolder pokemonShowFolder = await StorageFolder.GetFolderFromPathAsync(localFolder.Path + @"\Data\Pokemons\Show");
-            StorageFolder pokemonBlankFolder = await StorageFolder.GetFolderFromPathAsync(localFolder.Path + @"\Data\Pokemons\Blank");
+            StorageFile settingFile = null;
+            IList<string> foldersList = null;
+            string hiddenFolder;
+            string shownFolder;
+            StorageFolder pokemonShowFolder = null;
+            StorageFolder pokemonBlankFolder = null;
+            try
+            {
+                settingFile = await localFolder.GetFileAsync("settings.txt");
+                foldersList = await FileIO.ReadLinesAsync(settingFile);
+                hiddenFolder = foldersList[0];
+                shownFolder = foldersList[1];
+                pokemonShowFolder = await StorageFolder.GetFolderFromPathAsync(shownFolder);
+                pokemonBlankFolder = await StorageFolder.GetFolderFromPathAsync(hiddenFolder);
+            }
+            catch (FileNotFoundException)
+            {
+                OnFileNotFoundEvent();
+                return;
+            }
 
             IReadOnlyList<IStorageFile> pokemonShowFiles = await pokemonShowFolder.GetFilesAsync();
             IReadOnlyList<IStorageFile> pokemonBlankFiles = await pokemonBlankFolder.GetFilesAsync();
@@ -75,20 +93,21 @@ namespace PokemonQuizXAML
             }
             if (PokemonsData == null)
                 throw new NoPokemonException();
+            getDittoFromList();
         }
 
         public Pokemon RandomPokemon()
         {
             return PokemonsData[random.Next(PokemonsData.Count)];
         }
-
-        public event EventHandler FolderNoFoundEvent;
-        private void OnFolderNoFoundEvent()
+        
+        public event EventHandler FileNotFoundEvent;
+        private void OnFileNotFoundEvent()
         {
-            EventHandler folderNoFoundEvent = FolderNoFoundEvent;
-            if (folderNoFoundEvent != null)
+            EventHandler fileNotFoundEvent = FileNotFoundEvent;
+            if (fileNotFoundEvent != null)
             {
-                folderNoFoundEvent(this, new EventArgs());
+                fileNotFoundEvent(this, new EventArgs());
             }
         }
     }

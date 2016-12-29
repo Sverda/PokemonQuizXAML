@@ -27,9 +27,9 @@ namespace PokemonQuizXAML.SettingsPage
             LoadSettings();
         }
 
-        public async void ShowErrorDialog()
+        private async void showErrorDialog(string errorMessage)
         {
-            MessageDialog dialog = new MessageDialog("You have to choose folders with pokemon pictures. ");
+            MessageDialog dialog = new MessageDialog(errorMessage);
             await dialog.ShowAsync();
         }
 
@@ -48,7 +48,7 @@ namespace PokemonQuizXAML.SettingsPage
             catch (FileNotFoundException)
             {
                 settingsFile = await localFolder.CreateFileAsync("settings.txt");
-                ShowErrorDialog();
+                showErrorDialog("You have to choose folders with pokemon pictures. ");
             }
             catch (ArgumentOutOfRangeException)
             {
@@ -71,7 +71,7 @@ namespace PokemonQuizXAML.SettingsPage
             {
                 if (String.IsNullOrEmpty(hiddenPath))
                 {
-                    ShowErrorDialog();
+                    showErrorDialog("You have to choose folders with blank pokemon pictures. ");
                 }
                 return;
             }
@@ -89,13 +89,13 @@ namespace PokemonQuizXAML.SettingsPage
             IStorageFolder hpf = await folderPicker.PickSingleFolderAsync();
             if (hpf == null)
             {
-                if (String.IsNullOrEmpty(shownPath))
-                {
-                    ShowErrorDialog();
-                }
-                return;
+                showErrorDialog("You have to choose folder with no blank pokemon pictures. ");
+                shownPath = defaultPath;
             }
-            shownPath = hpf.Path;
+            else
+            {
+                shownPath = hpf.Path;
+            }
             OnPropertyChanged("ShownPath");
         }
 
@@ -112,13 +112,23 @@ namespace PokemonQuizXAML.SettingsPage
                 settingsFile = await localFolder.GetFileAsync("settings.txt");
             }
             List<string> list = new List<string>();
-            if (!(String.IsNullOrEmpty(hiddenPath) || String.IsNullOrWhiteSpace(hiddenPath)))
+            if (!String.IsNullOrEmpty(hiddenPath))
             {
                 list.Add(hiddenPath);
             }
-            if (!(String.IsNullOrEmpty(shownPath) || String.IsNullOrWhiteSpace(shownPath)))
+            if (!String.IsNullOrEmpty(shownPath))
             {
                 list.Add(shownPath);
+            }
+            if (list.Count != 2)
+            {
+                showErrorDialog("There should be two folder to load pokemon");
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list.RemoveAt(i);
+                }
+                list.Add(defaultPath);
+                list.Add(defaultPath);
             }
             await FileIO.WriteLinesAsync(settingsFile, list);
         }

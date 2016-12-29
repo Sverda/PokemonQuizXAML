@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Popups;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -54,8 +55,17 @@ namespace PokemonQuizXAML
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             quiz.CheckAnswerEvent += Quiz_CheckAnswerEvent;
             quiz.GameOverEvent += Quiz_GameOverEvent;
-            quiz.PokemonHolder.FolderNoFoundEvent += PokemonHolder_FolderNoFoundEvent;
+            quiz.AddHandlerToFileNotFoundEvent(PokemonHolder_FileNotFoundEvent);
+            quiz.LoadPokemon();
             //this.NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled; //holds state of application if page has been changed
+        }
+        
+        private async void PokemonHolder_FileNotFoundEvent(object sender, EventArgs e)
+        {
+            //this.Frame.Navigate(typeof(SettingsPage.SettingsPage));
+            MessageDialog dialog = new MessageDialog("Can't find pokemon. See in settings. ");
+            await dialog.ShowAsync();
+            start.IsEnabled = false;
         }
 
 
@@ -109,11 +119,6 @@ namespace PokemonQuizXAML
 
         #endregion
 
-        private void PokemonHolder_FolderNoFoundEvent(object sender, EventArgs e)
-        {
-            this.Frame.Navigate(typeof(SettingsPage.SettingsPage));
-        }
-
         private void addPokemon_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddPokemonPage));
@@ -144,7 +149,7 @@ namespace PokemonQuizXAML
             quiz.OnCheckAnswerEvent(new CheckAnswerArgs(button4.Content.ToString()));
         }
 
-        private void start_Click(object sender, RoutedEventArgs e)
+        private async void start_Click(object sender, RoutedEventArgs e)
         {
             start.IsEnabled = false;
             setButtons();

@@ -426,11 +426,6 @@ namespace PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo
             var that = (global::PokemonQuizXAML.Quiz)instance;
             return that.PokemonHolder;
         }
-        private void set_13_Quiz_PokemonHolder(object instance, object Value)
-        {
-            var that = (global::PokemonQuizXAML.Quiz)instance;
-            that.PokemonHolder = (global::PokemonQuizXAML.PokemonHolder)Value;
-        }
         private object get_14_Quiz_CurrentPokemon(object instance)
         {
             var that = (global::PokemonQuizXAML.Quiz)instance;
@@ -566,7 +561,7 @@ namespace PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo
                 userType = (global::PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("PokemonQuizXAML.Quiz");
                 xamlMember = new global::PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo.XamlMember(this, "PokemonHolder", "PokemonQuizXAML.PokemonHolder");
                 xamlMember.Getter = get_13_Quiz_PokemonHolder;
-                xamlMember.Setter = set_13_Quiz_PokemonHolder;
+                xamlMember.SetIsReadOnly();
                 break;
             case "PokemonQuizXAML.Quiz.CurrentPokemon":
                 userType = (global::PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("PokemonQuizXAML.Quiz");
@@ -947,6 +942,5 @@ namespace PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo
         }
     }
 }
-
 
 
