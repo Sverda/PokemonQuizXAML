@@ -21,14 +21,7 @@ namespace PokemonQuizXAML
         {
             this.random = random;
             PokemonsData = new List<Pokemon>();
-            try
-            {
-                loadPokemonsAsync();
-            }
-            catch (Exception)
-            {
-                OnFolderNoFoundEvent();
-            }
+            loadPokemonsAsync();
             getDittoFromList();
         }
 

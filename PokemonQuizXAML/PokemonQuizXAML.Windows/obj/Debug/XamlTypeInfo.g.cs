@@ -949,3 +949,4 @@ namespace PokemonQuizXAML.PokemonQuizXAML_Windows_XamlTypeInfo
 }
 
 
+

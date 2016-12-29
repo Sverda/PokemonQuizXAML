@@ -24,23 +24,12 @@ namespace PokemonQuizXAML.SettingsPage
 
         public Settings()
         {
-            try
-            {
-                LoadSettings();
-            }
-            catch (FileNotFoundException)
-            {
-                ShowErrorDialog();
-                return;
-            }
-            OnPropertyChanged(HiddenPath);
-            OnPropertyChanged(ShownPath);
-            OnPropertyChanged(DefaultPath);
+            LoadSettings();
         }
 
         public async void ShowErrorDialog()
         {
-            MessageDialog dialog = new MessageDialog("You have to choose folders' path to pokemon. ");
+            MessageDialog dialog = new MessageDialog("You have to choose folders with pokemon pictures. ");
             await dialog.ShowAsync();
         }
 
@@ -52,14 +41,22 @@ namespace PokemonQuizXAML.SettingsPage
             try
             {
                 settingsFile = await localFolder.GetFileAsync("settings.txt");
+                IList<string> paths = await FileIO.ReadLinesAsync(settingsFile);
+                hiddenPath = paths[0];
+                shownPath = paths[1];
             }
             catch (FileNotFoundException)
             {
-                throw new FileNotFoundException();
+                settingsFile = await localFolder.CreateFileAsync("settings.txt");
+                ShowErrorDialog();
             }
-            IList<string> paths = await FileIO.ReadLinesAsync(settingsFile);
-            hiddenPath = paths[0];
-            shownPath = paths[1];
+            catch (ArgumentOutOfRangeException)
+            {
+                hiddenPath = "";
+                shownPath = "";
+            }
+            OnPropertyChanged("HiddenPath");
+            OnPropertyChanged("ShownPath");
         }
         
         public async void BrowseFolderWithHiddenPokemon()
@@ -68,9 +65,18 @@ namespace PokemonQuizXAML.SettingsPage
             {
                 SuggestedStartLocation = PickerLocationId.DocumentsLibrary
             };
+            folderPicker.FileTypeFilter.Add(".txt");
             IStorageFolder hpf= await folderPicker.PickSingleFolderAsync();
+            if (hpf == null)
+            {
+                if (String.IsNullOrEmpty(hiddenPath))
+                {
+                    ShowErrorDialog();
+                }
+                return;
+            }
             hiddenPath = hpf.Path;
-            OnPropertyChanged(HiddenPath);
+            OnPropertyChanged("HiddenPath");
         }
 
         public async void BrowseFolderWithShownPokemon()
@@ -79,17 +85,42 @@ namespace PokemonQuizXAML.SettingsPage
             {
                 SuggestedStartLocation = PickerLocationId.DocumentsLibrary
             };
+            folderPicker.FileTypeFilter.Add(".txt");
             IStorageFolder hpf = await folderPicker.PickSingleFolderAsync();
+            if (hpf == null)
+            {
+                if (String.IsNullOrEmpty(shownPath))
+                {
+                    ShowErrorDialog();
+                }
+                return;
+            }
             shownPath = hpf.Path;
-            OnPropertyChanged(ShownPath);
+            OnPropertyChanged("ShownPath");
         }
 
         public async void SaveSettings()
         {
             IStorageFolder localFolder = ApplicationData.Current.LocalFolder;
-            IStorageFile settingsFile = await localFolder.CreateFileAsync("settings.txt");
-            await FileIO.WriteTextAsync(settingsFile, hiddenPath + '\n');
-            await FileIO.WriteTextAsync(settingsFile, shownPath);
+            IStorageFile settingsFile;
+            try
+            {
+                settingsFile = await localFolder.CreateFileAsync("settings.txt");
+            }
+            catch (Exception)
+            {
+                settingsFile = await localFolder.GetFileAsync("settings.txt");
+            }
+            List<string> list = new List<string>();
+            if (!(String.IsNullOrEmpty(hiddenPath) || String.IsNullOrWhiteSpace(hiddenPath)))
+            {
+                list.Add(hiddenPath);
+            }
+            if (!(String.IsNullOrEmpty(shownPath) || String.IsNullOrWhiteSpace(shownPath)))
+            {
+                list.Add(shownPath);
+            }
+            await FileIO.WriteLinesAsync(settingsFile, list);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
